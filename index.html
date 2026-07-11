@@ -228,7 +228,7 @@
     /* ── PROJECT CARDS (adapted from reference #what pattern) ── */
     #projects { background: var(--bg-1); border-block: 1px solid var(--border); }
     .what-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
+      display: grid; grid-template-columns: repeat(3, 1fr);
       border: 1px solid var(--border); border-radius: var(--r); overflow: hidden;
       gap: 1px; background: var(--border); margin-top: 3rem;
     }
@@ -242,9 +242,6 @@
       display: flex; flex-direction: column;
     }
     .what-card:hover { background: var(--bg-2); }
-    .what-card--wide {
-      grid-column: span 2;
-    }
     .what-num {
       font-family: var(--mono); font-size: .7rem; color: var(--accent);
       margin-bottom: 1.1rem; letter-spacing: .06em;
@@ -280,7 +277,7 @@
     }
     .img-wrap:hover .img-zoom-icon svg { stroke: var(--accent); }
     .what-title {
-      font-family: var(--mono); font-size: .82rem; font-weight: 600;
+      font-family: var(--mono); font-size: 1rem; font-weight: 600;
       color: var(--text); margin-bottom: .65rem; line-height: 1.4;
     }
     .what-title a { color: inherit; text-decoration: none; transition: color .18s; }
@@ -321,7 +318,7 @@
       letter-spacing: .1em; margin-bottom: 1rem;
     }
     .case-title {
-      font-family: var(--mono); font-size: .92rem; font-weight: 600;
+      font-family: var(--mono); font-size: 1.1rem; font-weight: 600;
       color: var(--text); line-height: 1.35; margin-bottom: .9rem;
     }
     .case-tag {
@@ -574,7 +571,7 @@
         </div>
       </div>
 
-      <div class="what-card what-card--wide reveal">
+      <div class="what-card reveal">
         <div class="img-wrap"><img class="proj-img" src="assets/interview-feedback-simulator.png" alt="Interview Feedback Simulator screenshot" loading="lazy"><span class="img-zoom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span></div>
         <div class="what-num">[05]</div>
         <div class="what-title"><a href="https://github.com/teokitten/interview-feedback-simulator" target="_blank" rel="noopener noreferrer">Interview Feedback Simulator</a></div>
@@ -585,7 +582,7 @@
         </div>
       </div>
 
-      <div class="what-card what-card--wide reveal">
+      <div class="what-card reveal">
         <div class="img-wrap"><img class="proj-img" src="assets/link-stash.png" alt="Link Stash screenshot" loading="lazy"><span class="img-zoom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span></div>
         <div class="what-num">[06]</div>
         <div class="what-title"><a href="https://github.com/teokitten/link-stash" target="_blank" rel="noopener noreferrer">Link Stash</a></div>
@@ -604,14 +601,15 @@
   <div class="inner">
     <div class="s-label reveal" data-n="02 ">cases</div>
     <h2 class="s-title reveal">Selected builds</h2>
-    <p class="s-sub reveal">Let's have a closer look at two of the harder problems behind these tools.</p>
+    <p class="s-sub reveal">Let's have a closer look at two of these tools, and the problems they solve.</p>
     <div class="case-grid">
 
       <div class="case-card reveal">
         <div class="case-n">case_01.md</div>
         <h3 class="case-title">EuroJobSearch</h3>
         <span class="case-tag">8 sources, one format</span>
-        <p class="case-problem">Eight job sources return eight different shapes of data – different fields, formats, and inconsistent or missing location text. EuroJobSearch pulls all of it into one consistent format, filters out duplicate postings that show up across multiple sources, and works out whether a job is remote, hybrid, or onsite even when the listing doesn't say so directly. Keyword filtering and a built-in application tracker sit on top of it.</p>
+        <p class="case-problem">Eight job sources return eight different shapes of data – different fields, formats, and inconsistent or missing location text. EuroJobSearch pulls all of it into one consistent format, filters out duplicate postings across sources, and works out whether a job is remote, hybrid, or onsite even when the listing doesn't say so directly.</p>
+        <p class="case-problem">Search matches comma-separated keywords at once, with filtering by country. New postings get flagged so you're not re-reading the same listings every day. A built-in application tracker rounds it out – save jobs, track status from applied to offer, and export everything as proof of your job search.</p>
         <div class="img-wrap img-wrap--case"><img class="case-img" src="assets/eurojobsearch.png" alt="EuroJobSearch application tracker view" loading="lazy"><span class="img-zoom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span></div>
       </div>
 
@@ -619,7 +617,8 @@
         <div class="case-n">case_02.md</div>
         <h3 class="case-title">OpenAPI Spec Audit</h3>
         <span class="case-tag">1,200 endpoints, one score</span>
-        <p class="case-problem">Most tools built around API documentation simply display it. My tool checks whether it's actually good. Are the descriptions clear? Are there examples? Are error responses explained? Is it obvious what's required or optional? Each issue is weighted by how much it would actually confuse a developer reading the docs – a missing description counts for more than a missing example. Running it against a large real-world API (GitHub's, about 1,200 endpoints) and fixing what it found raised the documentation score from 74 out of 100 to 80. A command-line version runs the same checks automatically, so a team can catch these issues before every release.</p>
+        <p class="case-problem">Most tools built around API documentation simply display it. My tool checks whether it's actually good. Are the descriptions clear? Are there examples? Are error responses explained? Is it obvious what's required or optional? Each issue is weighted by how much it would actually confuse a developer reading the docs – a missing description counts for more than a missing example.</p>
+        <p class="case-problem">Running it against a large real-world API (GitHub's, about 1,200 endpoints) and fixing what it found raised the documentation score from 74 out of 100 to 80. A command-line version runs the same checks automatically, so a team can catch these issues before every release.</p>
         <div class="img-wrap img-wrap--case"><img class="case-img" src="assets/spec-audit-case.png" alt="Spec Audit score breakdown view" loading="lazy"><span class="img-zoom-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span></div>
       </div>
 
